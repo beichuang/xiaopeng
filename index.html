@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<link href="icon.png" rel="icon" type="image/x-icon">
+
+	<title>You & Me</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body style="background: pink">
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=0 height=0 src="https://music.163.com/outchain/player?type=2&id=668248&auto=1&height=66"></iframe>
+	<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=0 height=0 src="https://music.163.com/outchain/player?type=2&id=5294948&auto=1&height=66"></iframe> -->
+
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* We have a lot of similarities,</span><br />
+				<span class="space"/><span class="comments">* First impression of you is most lasting.</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"liuYabo"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"zhaiXiaopeng"</span>);<br />
+				<span class="comments">// April 22, 2019, I want told you I know you. </span><br />
+				i.know(u);<br />
+				<span class="comments">// I hope you accepted and became my girlfriend eversince.</span><br />
+				u.accepted(weixin);<br />
+				<span class="comments">// Since then, I want to know you every day.</span><br />
+				i.miss(u);<br />
+				<span class="comments">// And take care of you and our love one day.</span><br />
+				i.takeCareOf(u);<br />
+				<span class="comments">// You say that you like literature.</span><br />
+				<span class="comments">// So I keep waiting and I have confidence that you will.</span><br />
+				<span class="keyword">boolean</span> isHesitate = <span class="keyword">true</span>;<br />
+				<span class="keyword">while</span> (isHesitate) {<br />
+				<span class="placeholder"/>i.waitFor(u);<br />
+				<span class="placeholder"/><span class="comments">// I think it is an important decision</span><br />
+				<span class="placeholder"/><span class="comments">// and you should think it over.</span><br />
+				<span class="placeholder"/>isHesitate = u.thinkOver();<br />
+				}<br />
+				<span class="comments">// After a romantic time, we will live happily ever after.</span><br />
+				i.take care of you;<br />
+				i.love happily with you;<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						<img src="img/1.jpg" style="height: 240px;  position:absolute;left:23px;top:-260px;">
+						peng, I love you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Take care of you forever.<br/>
+						<div class="signature">- liuyabo</div>
+						<!-- <img src="img/2.jpg" style="height: 220px; position:absolute;left:396px;top:156px;"> -->
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<div id="copyright">
+			Inspired by FlowerPower 刘亚博 project.<br />
+			Copyright © 2019 翟晓鹏
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2019, 03, 22);
+		together.setHours(21);
+		together.setMinutes(24);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+
+</body>
+</html>
